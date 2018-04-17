@@ -25,19 +25,24 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    user= User.create!(user_params)
+    redirect_to user
     #complete this method
   end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+	user= User.find(params[:id])
+	user.update!(user_params)
+	redirect_to user
     #complete this method
   end
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    #complete this method
+    #complete this method, no! NEVER!
   end
 
   private
